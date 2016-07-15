@@ -1,0 +1,15 @@
+{
+  "name": "socketserver",
+  "version": "1.0.0",
+  "description": "Servidor de Sockets",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "SOCKET"
+  ],
+  "author": "TheVladman",
+  "license": "MIT"
+}
