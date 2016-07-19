@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+table{
+  text-align: center;
+  margin: 100px auto;
+}
+
+thead{
+  background: #000;
+}
+
+thead td{
+  color: #fff;
+  font-size: 12pt;
+}
+
+tr{
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+td{
+  width:   10%;
+  max-width: 100px;
+  margin:  0;
+  padding: 10px 5px;
+  border:  solid #000 2px;
+  font-size: 10pt;
+}
