@@ -77,23 +77,40 @@ td{
       myDeleteFunction(data);
   });
   
-  socket.on('myip',function(data){
+  socket.on('my_ip',function(data){
       console.log(data);
-      
+      id = data[0];
+      iden = data[1];
+      so = data[2];
+      ip6 = data[3];
+      ip4 = data[4];
+      //console.log(ip4);
+      insertData(id,iden,so,ip6,ip4);
   });
     
     
 function myCreateFunction(id) {
     var table = document.getElementById("cuerpo");
+    
     var row = table.insertRow(0);
-    row.id = id;
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
+    row.id = id;
 }
-
+    
+function insertData(id,iden,so,ip6,ip4){
+    var table = document.getElementById("cuerpo");
+    var row = document.getElementById(id).children;
+    row[0].innerHTML = iden;
+    row[1].innerHTML = 'Conectado';
+    row[2].innerHTML = so;
+    row[3].innerHTML = ip4;
+    row[4].innerHTML = ip6;
+}
+    
 function myDeleteFunction(id) {
     var table = document.getElementById("cuerpo");
     var row = document.getElementById(id);

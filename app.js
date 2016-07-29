@@ -15,9 +15,6 @@ io.on('connection', function(socket) {
     
 });
 
-
-
-
 var vlad = require('socket.io').listen(1235);
 
 vlad.sockets.on('connection', function (socket) {
@@ -27,9 +24,22 @@ vlad.sockets.on('connection', function (socket) {
     
 /* ########## EVENTOS ########## */
   socket.on('my_ip', function (data) {
-      console.log(data);
-      mensaje = data.push(socket.id);
-      console.log(mensaje);
+      //console.log(data);
+      id = socket.id;
+      iden = data[0];
+      so = data[1];
+      ips = data[2];
+      ip6 = ips[0];
+      ip4 = ips[1];
+      //console.log(ip4);
+      mensaje = [];
+      mensaje.push(id);
+      mensaje.push(iden);
+      mensaje.push(so);
+      mensaje.push(ip6);
+      mensaje.push(ip4);
+      //console.log(mensaje);
+      io.emit('my_ip',mensaje);
   });
 
   socket.on('disconnect', function(data){
